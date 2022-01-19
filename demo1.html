@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>求点到原点之间的距离</title>
+	<style>
+		span {
+			margin-left: 20px;
+			line-height: 20px;
+			font-size: 16px;
+			color: #333;
+		}
+		input {
+			width: 100px;
+			height: 20px;
+			margin-top: 10px;
+			margin-left: 10px;
+			padding: 0 5px;
+			border: 1px solid #ccc;
+			line-height: 20px;
+			color: #333;
+			font-size: 16px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<span>请输入横坐标</span>
+	<input type="text" id="positionx" name="positionx" />
+	<span>请输入纵坐标</span>
+	<input type="text" id="positiony" name="positiony" />
+	<button onclick="getdistance()">点击计算</button>
+	<span id="distance"></span>
+	<script>
+		function getdistance() {
+			var x = document.getElementById("positionx").value;
+			var y = document.getElementById("positiony").value;
+			if (x!=null && y!=null && isNumber(x) && isNumber(y)) {
+				var distance = Math.sqrt(x*x + y*y);
+				var _distance = document.getElementById("distance");
+				_distance.innerHTML = "该点与原点之间的距离为" + distance;
+			} else {
+				window.alert("请准确输入横坐标和纵坐标！");
+			}
+		}
+		function isNumber(num) {
+			var reg = /^(-)?\d+(\.\d+)?$/;
+			if(reg.exec(num)==null || num=="") {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+</body>
+</html>
