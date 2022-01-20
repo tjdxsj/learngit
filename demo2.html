@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>计算绝对值</title>
+</head>
+<body>
+	<span>请输入要计算的数字</span>
+	<input type="number" name="number" id="number" />
+	<br>
+	<button onclick="abs()">点击计算</button>
+	<span id="result"></span>
+	<script>
+		var abs = () => {
+			var num = document.getElementById("number").value;
+			if (num >=0) {
+				var result = num;
+			} else {
+				var result = -num;
+			}
+			var text = ` ${num} 的绝对值是 ${result} `;
+			document.getElementById("result").innerHTML = text;
+		}
+	</script>	
+</body>
+</html>
