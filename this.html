@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>this</title>
+    <link rel="stylesheet" href="./lib/css/common.css">
+    <script src="./lib/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <input type="text" value="" placeholder="第一个因子" id="x">
-    <input type="text" value="" placeholder="第二个因子" id="y">
+    <input type="text" placeholder="第一个因子" id="x">
+    <input type="text" placeholder="第二个因子" id="y">
     <button id="jisuan">计算</button>
     <input type="text" id="result">
+
+    <script>
+        $(function(){
+            $('#jisuan').click(function(){
+                console.log("开始计算");
+                var x = parseInt($('#x').val());
+                var y = parseInt($('#y').val());
+                console.log(x);
+                console.log(y);
+                $("#result").val(x*y);
+            });
+        });
+    </script>
 </body>
 </html>
