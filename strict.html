@@ -15,6 +15,24 @@
 			}
 			
 			getNum();
+			
+			// 测试一下箭头函数
+			// let sum = (a, b) => a + b;
+			// alert(sum(2, 3));
+			
+			let ask = (question, yes, no) => {
+				if(confirm(question)) {
+					yes();
+				} else {
+					no();
+				}
+			}
+			
+			ask(
+				"Do you agree?",
+				() => alert("You agreed."),
+				() => alert("You canceled the execution.")
+			);
 		</script>
 	</body>
 </html>
