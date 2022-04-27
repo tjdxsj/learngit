@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>两数相加</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 *	输入：l1 = [2,4,3], l2 = [5,6,4]
+			 * 	输出：[7,0,8]
+			 *	解释：342 + 465 = 807.
+			 */
+			var arr1 = [9,9,9,9,9,9,9];
+			var arr2 = [9,9,9,9];
+			var addTwoNumbers = function(l1, l2) {
+			    var arr = [];
+			    var flag = 0;
+			    var sum = 0;
+			    for(var i=0; i<Math.max(l1.length, l2.length); i++) {
+			        l1[i] = l1[i] == undefined ? 0 : l1[i];
+			        l2[i] = l2[i] == undefined ? 0 : l2[i];
+			        sum = l1[i] + l2[i] + flag;
+			        if (sum < 10) {
+			            arr.push(sum);
+			            flag = 0;
+			        } else {
+			            if(i == Math.max(l1.length, l2.length)-1) {
+			                arr.push(sum - 10, 1);
+			            } else {
+			                arr.push(sum - 10);
+			                flag = 1;
+			            }
+			        }
+			    }
+			    return arr;
+			};
+			console.log(addTwoNumbers(arr1, arr2));
+		</script>
+	</body>
+</html>

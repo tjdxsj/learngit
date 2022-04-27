@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [2, 7, 11, 30];
+			var sum = 18;
+			for (var index=0; index<arr.length-1; index++) {
+				for (var index2 = index + 1; index2 < arr.length; index2++) {
+					if (arr[index] + arr[index2] == sum) {
+						console.log(index, index2);
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
