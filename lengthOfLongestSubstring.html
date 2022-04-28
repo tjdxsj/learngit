@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>最长的字串长度</title>
+	</head>
+	<body>
+		<script>
+			function lengthOfLongestSubstring(str){
+				let minIndex = 0
+				let ans = 0
+				for(let i = 0; i < str.length; i++){
+					if(str.indexOf(str[i], minIndex) < i) {
+						minIndex = str.indexOf(str[i], minIndex) + 1;
+					} else {
+						ans = Math.max(ans, i - minIndex + 1);
+					}
+				}
+				console.info(ans);
+				return ans;
+			}
+			lengthOfLongestSubstring('aucaccc');
+		</script>
+	</body>
+</html>
